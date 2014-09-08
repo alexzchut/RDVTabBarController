@@ -160,8 +160,7 @@
         _contentView = [[UIView alloc] init];
         [_contentView setBackgroundColor:[UIColor whiteColor]];
         [_contentView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|
-         UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleLeftMargin|
-         UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin];
+         UIViewAutoresizingFlexibleHeight];
     }
     return _contentView;
 }
