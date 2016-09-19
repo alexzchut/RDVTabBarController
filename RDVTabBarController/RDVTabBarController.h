@@ -28,6 +28,8 @@
 
 @interface RDVTabBarController : UIViewController <RDVTabBarDelegate>
 
+@property (strong, nonatomic) UIView *contentView;
+
 /**
  * The tab bar controller’s delegate object.
  */
