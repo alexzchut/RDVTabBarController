@@ -291,6 +291,7 @@
     if (unselectedImage && (unselectedImage != [self unselectedBackgroundImage])) {
         [self setUnselectedBackgroundImage:unselectedImage];
     }
+    [self setNeedsDisplay]
 }
 
 @end
