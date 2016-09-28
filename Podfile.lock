@@ -1,0 +1,62 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - BFRStyleGuide (2.2.0):
+    - BFRUtils
+    - buffer-objc-kit-official
+    - Masonry
+    - SDWebImage
+    - TTTAttributedLabel
+  - BFRUtils (1.1.11):
+    - AFNetworking
+  - buffer-objc-kit-official (4.4.13):
+    - AFNetworking (~> 3.0)
+    - Mantle (~> 1.5)
+    - XMLDictionary (~> 1.4)
+  - Mantle (1.5.8):
+    - Mantle/extobjc (= 1.5.8)
+  - Mantle/extobjc (1.5.8)
+  - Masonry (1.0.2)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - TTTAttributedLabel (2.0.0)
+  - XMLDictionary (1.4)
+
+DEPENDENCIES:
+  - BFRStyleGuide (from `https://github.com/bufferapp/buffer-ios-styleguide.git`)
+
+EXTERNAL SOURCES:
+  BFRStyleGuide:
+    :git: https://github.com/bufferapp/buffer-ios-styleguide.git
+
+CHECKOUT OPTIONS:
+  BFRStyleGuide:
+    :commit: 78472c601f1a2d9ef92d24c936cc7e1bd54ca9d2
+    :git: https://github.com/bufferapp/buffer-ios-styleguide.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  BFRStyleGuide: bde221ad4fc4a05291b913227d864dd92098bfc6
+  BFRUtils: 525576492b50053a34d929bc32aa78e878e9d1e1
+  buffer-objc-kit-official: fe561b8851e76bf160af7996c0f22e68ac6b0ed5
+  Mantle: f03b2b606c3f0cabd80214ad8a2fed6b464a7359
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
+  XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
+
+COCOAPODS: 0.39.0

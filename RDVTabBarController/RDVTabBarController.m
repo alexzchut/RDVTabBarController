@@ -23,6 +23,7 @@
 
 #import "RDVTabBarController.h"
 #import "RDVTabBarItem.h"
+#import "BFRThemeManager.h"
 #import <objc/runtime.h>
 
 @interface UIViewController (RDVTabBarControllerItemInternal)
@@ -38,6 +39,23 @@
 @end
 
 @implementation RDVTabBarController
+
+#pragma mark - Status bar
+- (BOOL)modalPresentationCapturesStatusBarAppearance {
+    return YES;
+}
+
+-(BOOL)prefersStatusBarHidden{
+    return NO;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    if([[[BFRThemeManager sharedManager] currentThemeName] isEqualToString:@"dark"]){
+        return UIStatusBarStyleLightContent;
+    } else {
+        return UIStatusBarStyleDefault;
+    }
+}
 
 #pragma mark - View lifecycle
 
@@ -56,15 +74,7 @@
     [self setTabBarHidden:self.isTabBarHidden animated:NO];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return self.selectedViewController.preferredStatusBarStyle;
-}
-
-- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-    return self.selectedViewController.preferredStatusBarUpdateAnimation;
-}
-
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     UIInterfaceOrientationMask orientationMask = UIInterfaceOrientationMaskAll;
     for (UIViewController *viewController in [self viewControllers]) {
         if (![viewController respondsToSelector:@selector(supportedInterfaceOrientations)]) {

@@ -1,0 +1,1 @@
+../../../BFRStyleGuide/BFRStyleGuide/Cells/BFRProfileTableViewCell.h
