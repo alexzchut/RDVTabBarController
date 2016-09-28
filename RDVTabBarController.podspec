@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.source_files  = 'RDVTabBarController', 'RDVTabBarController/**/*.{h,m}'
   s.framework = 'UIKit', 'CoreGraphics', 'Foundation'
   s.requires_arc = true
+  s.dependency 'BFRStyleGuide'
 end

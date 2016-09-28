@@ -1,0 +1,42 @@
+{
+  "name": "BFRStyleGuide",
+  "version": "2.2.0",
+  "summary": "Buffer BFRStyleGuide.",
+  "homepage": "https://bufferapp.com",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Andrew Yates": "andy@bufferapp.com"
+  },
+  "source": {
+    "git": "https://github.com/bufferapp/buffer-ios-styleguide.git",
+    "tag": "v2.2.0"
+  },
+  "source_files": [
+    "Classes",
+    "BFRStyleGuide/**/*.{h,m}"
+  ],
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "dependencies": {
+    "TTTAttributedLabel": [
+
+    ],
+    "Masonry": [
+
+    ],
+    "buffer-objc-kit-official": [
+
+    ],
+    "SDWebImage": [
+
+    ],
+    "BFRUtils": [
+
+    ]
+  }
+}

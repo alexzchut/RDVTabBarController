@@ -1,0 +1,1 @@
+../../../BFRStyleGuide/BFRStyleGuide/Elements/BFRProfileAvatar/BFRProfileAvatar.h
