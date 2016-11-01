@@ -46,21 +46,30 @@
 #pragma mark - Methods
 
 - (void)setupViewControllers {
-    UIViewController *firstViewController = [[RDVFirstViewController alloc] init];
-    UIViewController *firstNavigationController = [[UINavigationController alloc]
-                                                   initWithRootViewController:firstViewController];
     
-    UIViewController *secondViewController = [[RDVSecondViewController alloc] init];
-    UIViewController *secondNavigationController = [[UINavigationController alloc]
-                                                    initWithRootViewController:secondViewController];
+    NSMutableArray *arr = [NSMutableArray array];
+    UIViewController *viewController = [[RDVFirstViewController alloc] init];
+    UIViewController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [arr addObject:navigationController];
     
-    UIViewController *thirdViewController = [[RDVThirdViewController alloc] init];
-    UIViewController *thirdNavigationController = [[UINavigationController alloc]
-                                                   initWithRootViewController:thirdViewController];
+    viewController = [[RDVSecondViewController alloc] init];
+    navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [arr addObject:navigationController];
     
-    RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];
-    [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController,
-                                           thirdNavigationController]];
+    viewController = [[RDVThirdViewController alloc] init];
+    navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [arr addObject:navigationController];
+    
+    viewController = [[RDVSecondViewController alloc] init];
+    navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [arr addObject:navigationController];
+    
+    viewController = [[RDVThirdViewController alloc] init];
+    navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [arr addObject:navigationController];
+    
+    RDVTabBarController *tabBarController = [RDVTabBarController new];
+    [tabBarController setViewControllers:arr];
     self.viewController = tabBarController;
     
     [self customizeTabBarForController:tabBarController];
@@ -69,10 +78,11 @@
 - (void)customizeTabBarForController:(RDVTabBarController *)tabBarController {
     UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_background"];
     UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
-    NSArray *tabBarItemImages = @[@"first", @"second", @"third"];
+    NSArray *tabBarItemImages = @[@"first", @"second", @"third", @"third", @"third"];
     
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {
+        item.title = @"HomePage";
         [item setBackgroundSelectedImage:finishedImage withUnselectedImage:unfinishedImage];
         UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_selected",
                                                       [tabBarItemImages objectAtIndex:index]]];
@@ -97,18 +107,8 @@
                            NSFontAttributeName: [UIFont boldSystemFontOfSize:18],
                            NSForegroundColorAttributeName: [UIColor blackColor],
                            };
-    } else {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-        backgroundImage = [UIImage imageNamed:@"navigationbar_background"];
-        
-        textAttributes = @{
-                           UITextAttributeFont: [UIFont boldSystemFontOfSize:18],
-                           UITextAttributeTextColor: [UIColor blackColor],
-                           UITextAttributeTextShadowColor: [UIColor clearColor],
-                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                           };
-#endif
     }
+    
     
     [navigationBarAppearance setBackgroundImage:backgroundImage
                                   forBarMetrics:UIBarMetricsDefault];
